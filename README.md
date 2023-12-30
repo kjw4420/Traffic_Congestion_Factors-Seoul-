@@ -27,9 +27,8 @@
 **데이터:** 모든 데이터는 공공데이터포털 한국교통연구원 2022년 행정구역단위 교통 데이터를 이용했으며, 데이터를 자치구 기준으로 유의미 하다고 추측되는 데이터들을 가공 및 추가했습니다
 <br><br>
 
-
-
 ## :bookmark_tabs: 데이터 살펴보기
+분석할 데이터의 열, 개수, 데이터 타입을 확인한다.
 <div align="center">
 <img width="876" alt="데이터살펴보기" src="https://github.com/kjw4420/Traffic_Congestion_Factors_in_Seoul/assets/97749184/4991aae5-d606-42fd-8270-1c85da1126a6">
 </div>
@@ -104,11 +103,18 @@
 - 결과적으로, 혼잡시간강도를 예측하는 데에 버스추정교통량과 혼잡빈도강도는 영향을 미치는 유의미한 변수이며, 이 모델은 데이터를 잘 설명하고 있는 것으로 보입니다.
  <div align="center">
 <img width="568" alt="분석결과" src="https://github.com/kjw4420/Traffic_Congestion_Factors_in_Seoul/assets/97749184/bb5cee9c-d17c-4388-917f-60c96f5e5dec">
- </div>
+ </div><br><br>
+
+
+## :bookmark_tabs: 문제해결: 변수선택 단계 추가
+다중 공선성 문제를 해결하기 위해 후진 선택법을 활용했습니다. 처음에는 8개의 독립 변수를 이용하여 모델을 구축했지만, 이로 인해 다중 공선성이 높아져 모델의 예측력이 떨어졌습니다. 그래서 후진 선택법을 이용해 유의미한 변수만을 선택하여 최적화된 모델을 구축했고, 이를 통해 독립 변수의 수를 8개에서 2개로 줄여 다중 공선성을 낮추었습니다.
+
+후진 선택법을 사용한 이유는 다른 선택법에 비해 후진 선택법이 독립변수가 많은 전체 데이터에서 다중 공선성을 줄이는 데 효과적이라고 판단했기 때문입니다. 이 방법은 모든 변수를 포함한 상태에서 하나씩 제거해 나가는 방식으로, 각 변수가 모델에 미치는 영향을 순차적으로 평가하면서 가장 중요한 변수들을 선별합니다. 이를 통해 모델의 복잡성을 줄이고 예측력을 향상시킬 수 있었습니다. 이러한 전략 선택과정을 통해 데이터 분석에서 모델의 정확성을 향상시키는 중요한 전략을 경험하고 익힐 수 있었습니다.<br><br>
+
 
 ## 👩🏻‍💻 멤버
 
-### Front-end/back-end
+### Data Analysis
 
 |               | github                             |
 | ------------- | ---------------------------------- |
@@ -129,6 +135,6 @@
 <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white"/> <br>
 
 **데이터베이스**<br>
-<img src="https://img.shields.io/badge/Jupyter-#F37626?style=flat-square&logo=mysql&logoColor=white"/>
+<img src="https://img.shields.io/badge/Jupyternotebook-#F37626?style=flat-square&logo=mysql&logoColor=white"/>
 
 
