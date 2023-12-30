@@ -9,7 +9,7 @@
 **👩🏻‍💻나의 역할:**
     
     
-     [Data Analyst]
+     [Data analysis]
     
        - 공공 데이터 포털에서 관련 데이터 수집 및 가공
     
@@ -23,20 +23,55 @@
     
 
 ## :bookmark_tabs: 프로젝트 개요
-서울시 교통 혼잡도에 영향을 미치는 요인 분석
+**목적:** 서울시 교통 혼잡도에 영향을 미치는 요인 분석<br>
+**데이터:** 모든 데이터는 공공데이터포털 한국교통연구원 2022년 행정구역단위 교통 데이터를 이용했으며, 데이터를 자치구 기준으로 유의미 하다고 추측되는 데이터들을 가공 및 추가했습니다
 <br><br>
-📌 **'I’m 示'** 는  취향 분석 테스트를 통해 회원 개인의 취향을 분석하고, 회원을 카테고리 별로 분류하여 해당 카테고리에 걸맞은 전시회 정보를 회원에게 제공하는 웹이다. 더 나아가 다양한 전시회를 필터별(인기순, 최신순 등)로 정렬한다. <br><br>
 
 
-## :bookmark_tabs: 프로젝트 배경
 
-사용자의 취향별 전시회 정보 소개 웹페이지로, 현존해 있는 전시회 정보 사이트들은 대부분 단순히 전시회들의 정보를 소개하여 사용자가 관련 전시회에 대한 정보를 파악하고 있어야 하는 페이지들이 대부분이다. 연령층에 구애 없이 전시회를 관람하는 사람들이 증가하고 있지만, 전시 회에 대해 접한 지 얼마 되지 않은 사용자들 또한 증가하고 있어, 자신이 원하는 종류의 전시회 를 찾기에서 어려움을 겪는다. 이러한 문제들을 해결하기 위해 회원가입 시, 사용자들에게 질문과 그림들을 통해 각 사용자의 취향을 분석하고 저장하여 원하는 전시회를 소개할 수 있도록 한다. 이 웹페이지를 통하여 전시회를 자주 방문하는 사람들은 더 쉽게 전시회를 찾을 수 있을 뿐만 아 니라 전시회를 자주 접해보지 않아서 선택에 어려움을 겪는 사용자들까지 쉽게 원하는 전시회를 찾을 수 있게 된다. 또한 원하는 전시회를 클릭하면 전시회의 위치, 가격, 관련 링크 등을 통하여 정보들을 얻고 북마크를 통하여 더 많은 사람이 문화생활을 좀 더 다양하고 편하게 즐길 수 있음을 기대할 수 있다.
-<br>
-## :bookmark_tabs: 프로젝트 구성도
+## :bookmark_tabs: 데이터 살펴보기
 <div align="center">
-<img width="794" alt="스크린샷 2023-12-07 오전 3 33 05" src="https://github.com/kjw4420/exhibition_platform/assets/97749184/9ebb0119-e327-49b5-adb1-5806b405e816">
+<img width="876" alt="데이터살펴보기" src="https://github.com/kjw4420/Traffic_Congestion_Factors_in_Seoul/assets/97749184/4991aae5-d606-42fd-8270-1c85da1126a6">
 </div>
+<br>
 
+## :bookmark_tabs: 데이터 전처리
+- 전체 추정 교통량
+    - 관측교통량과 내비게이션 데이터를 이용하여 미관측 도로의 교통량을 추정하는 알고리즘을 통해 추정된 교통량. 도로를 주행하는 차량의 수를 의미하며, 읍면동 경계로 구분된 데이터로 단위는 대/일
+    - 전체추정교통량은 승용차추정교통량, 버스추정교통량과 화물차추정교통량의 합산치
+<div align="center">
+<img width="892" alt="전체추정교통량" src="https://github.com/kjw4420/Traffic_Congestion_Factors_in_Seoul/assets/97749184/8a8f5e4f-84b3-41b8-b8cd-86b70f9df9e2">
+</div><br>
+
+- 혼잡시간강도
+    - 도로를 주행하는 모든 차량이 경험한 총 통행시간대비 혼잡을 경험한 차량의 총 통행시간의 비율을 의미, 읍면동 경계로 구분된 데이터로 단위는 %
+    - 혼잡의 정도를 시간을 중점으로 나타낸 특성
+<div align="center">
+<img width="740" alt="혼잡시간강도" src="https://github.com/kjw4420/Traffic_Congestion_Factors_in_Seoul/assets/97749184/eb8bd50b-f08a-4591-b090-53b231f8b85d">
+</div><br>
+
+- 혼잡빈도강도
+    - 혼잡빈도강도는도로를주행하는모든차량대수중혼잡을경험한차량대수비율을의미 읍면동 경계로 구분된 데이터로 단위는 %
+    - 혼잡의 정도를 차량의 대수를 중점으로 나타낸 특성
+<div align="center">
+<img width="740" alt="혼잡빈도강도" src="https://github.com/kjw4420/Traffic_Congestion_Factors_in_Seoul/assets/97749184/0483db0c-975a-44ff-a0b8-2733807edbe1">
+</div><br>
+
+- 등록차수 & 교통량
+    - 등록차수는 행정구역단위의 2022년 한 해 동안 등록된 자동차의 수
+    - 왼쪽 데이터에서 행정구역단위 모든 유형의 자동차 등록수를 모두 합해 오른쪽 데이터의 등록차수로 표현
+    - 교통량은 등록차수에서 파생된 데이터로 전체추정교통량대비 등록차수의 비율
+ <div align="center">
+<img width="1179" alt="등록차수_교통량" src="https://github.com/kjw4420/Traffic_Congestion_Factors_in_Seoul/assets/97749184/5b7cf738-d684-4d4f-a481-e48db36dd075">
+</div><br>
+
+- 주차장 혼잡평균
+    - 주차장혼잡평균은 서울시 행정동별 시간별 주차현황의 1년치 데이터에서 주차장에따라 동일 시간대 시간당입구출입의 평균치에서 파생된 데이터
+    - 데이터를 살펴보면 대부분 아침 08, 09, 10시와 저녁 18, 19, 20시의 입구 출입이 가장 많은 것을 알 수 있다. 따라서 본 프로젝트의  목표는 교통 혼잡도에 영향을 미치는 요인 분석이므로 해당 데이터에서 가장 혼잡 시간인 아침 08, 09, 10시 저녁 18, 19, 20시의 평균치를 나타냈다.
+     <div align="center">
+<img width="1239" alt="주차장1" src="https://github.com/kjw4420/Traffic_Congestion_Factors_in_Seoul/assets/97749184/bb2e5455-bfc2-4ba8-b3ac-3f650da9f411">
+<img width="1292" alt="주차장2" src="https://github.com/kjw4420/Traffic_Congestion_Factors_in_Seoul/assets/97749184/fa117e7a-33d1-4d29-beed-e8894cd5c0a3">
+</div> <br><br>
 ## :bookmark_tabs: 기능 소개
  ✔️ **회원 전시 취향 분석:** <br>
  -로그인을 하면 취향 분석 테스트를 할 수 있는 링크가 생성되고 이를 통해 로그인한 회원이 선택하는 대답에 따라서 취향(ex, 현대적, 전통적 등)을 분석하여 Exhibition DB에 있는 Accounts Table에 들어있는 키워드로 분류하여 회원정보와 함께 저장한다.<br>
@@ -119,27 +154,20 @@ sort/views.py
 | 김지원  |https://github.com/kjw4420    |
 | 조서현        |   https://github.com/westnowise      |
 
-### 디자인
 
-조서현
 
 ## :hammer_and_wrench: 사용 기술
 
-### Front-end
-
-**프로그래밍 언어**<br>
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/> <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=flat-square&logo=Javascript&logoColor=white"/>
-<br>
 
 
 ### Back-end
 
 **언어**<br>
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/> <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=flat-square&logo=Javascript&logoColor=white"/><br><br>
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/> 
 **프레임워크/라이브러리**<br>
 <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white"/> <br>
 
 **데이터베이스**<br>
-<img src="https://img.shields.io/badge/mysql-4479A1?style=flat-square&logo=mysql&logoColor=white">
+<img src="https://img.shields.io/badge/Jupyter-#F37626?style=flat-square&logo=mysql&logoColor=white"/>
 
 
