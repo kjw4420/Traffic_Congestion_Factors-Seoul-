@@ -126,11 +126,14 @@
 
 
 **언어**<br>
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/> 
-**프레임워크/라이브러리**<br>
-<img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white"/> <br>
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/>  <br><br>
+**라이브러리**<br>
+<img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=Pandas&logoColor=white"/> 
+<img src="https://img.shields.io/badge/statsmodels-150458?style=flat-square&logo=statsmodels&logoColor=white"/> 
+<img src="https://img.shields.io/badge/matplotlib-150458?style=flat-square&logo=matplotlib&logoColor=white"/>
+<img src="https://img.shields.io/badge/seaborn-150458?style=flat-square&logo=seaborn&logoColor=white"/> <br>
 
-**데이터베이스**<br>
+**환경**<br>
 <img src="https://img.shields.io/badge/jupyter-F37626?style=flat-square&logo=Jupyter&logoColor=white"/>
 
 
