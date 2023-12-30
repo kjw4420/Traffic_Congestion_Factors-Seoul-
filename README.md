@@ -131,6 +131,6 @@
 <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white"/> <br>
 
 **데이터베이스**<br>
-<img src="https://img.shields.io/badge/jupyter-#F37626?style=flat-square&logo=mysql&logoColor=white"/>
+<img src="https://img.shields.io/badge/jupyter-F37626?style=flat-square&logo=Jupyter&logoColor=white"/>
 
 
